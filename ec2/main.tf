@@ -18,7 +18,7 @@ resource "aws_instance" "venu" {
 }*/
 
 resource "aws_ebs_volume" "venu" {
-  availability_zone = aws_instance.venu.availability_zonenew
+  availability_zone = aws_instance.venu.availability_zone
   size              = 1
 
   tags = {
