@@ -12,8 +12,3 @@ resource "aws_instance" "venu" {
     Name = var.instance_name
   }
 }
-
-resource "aws_eip" "venu" {
-  instance = aws_instance.venu.instance.id
-  vpc      = true
-}
