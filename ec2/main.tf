@@ -8,7 +8,7 @@ resource "aws_instance" "venu" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "venu"
+    Name = "venu123"
   }
 }
 
