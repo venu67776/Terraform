@@ -14,6 +14,6 @@ resource "aws_instance" "venu" {
 }
 
 resource "aws_eip" "venu" {
-  instance = aws_instance.web.id
+  instance = aws_instance.venu.instance.id
   vpc      = true
 }
