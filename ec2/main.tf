@@ -12,10 +12,10 @@ resource "aws_instance" "venu" {
     Name = var.instance_name
   }
 }
-resource "aws_eip" "lb" {
+/*resource "aws_eip" "lb" {
   instance = aws_instance.venu.id
   vpc      = true
-}
+}*/
 
 resource "aws_ebs_volume" "venu" {
   availability_zone = "us-east-1"
