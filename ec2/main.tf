@@ -16,3 +16,12 @@ resource "aws_eip" "lb" {
   instance = aws_instance.venu.id
   vpc      = true
 }
+
+resource "aws_ebs_volume" "venu" {
+  availability_zone = "us-east-1"
+  size              = 4
+
+  tags = {
+    Name = "venuebs"
+  }
+}
