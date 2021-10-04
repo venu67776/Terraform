@@ -19,9 +19,14 @@ resource "aws_instance" "venu" {
 
 resource "aws_ebs_volume" "venu" {
   availability_zone = "us-east-1a"
-  size              = 4
+  size              = 1
 
   tags = {
     Name = "venuebs"
   }
+}
+resource "aws_volume_attachment" "venuebs" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.venu.id
+  instance_id = aws_instance.venu.id
 }
