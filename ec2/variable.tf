@@ -3,3 +3,6 @@ variable "instance_name" {
   type        = string
   default     = "venu123"
 }
+variable "instance_count" {
+  default = "2"
+}
