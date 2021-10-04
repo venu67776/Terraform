@@ -12,7 +12,3 @@ resource "aws_instance" "venu" {
     Name = var.instance_name
   }
 }
-output "instance_id" {
-  description = "ID of the EC2 instance"
-  value       = aws_instance.venu.id
-}
