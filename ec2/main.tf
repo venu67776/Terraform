@@ -18,7 +18,7 @@ resource "aws_instance" "venu" {
 }*/
 
 resource "aws_ebs_volume" "venu" {
-  availability_zone = "us-east-1"
+  availability_zone = "us-east-1a"
   size              = 4
 
   tags = {
