@@ -2,7 +2,6 @@ terraform {
   backend "s3" {
     bucket = "venuzs"
     key    = "terraform.tfstate"
-    region = "us-east-1"
   }
 }
 provider "aws" {
