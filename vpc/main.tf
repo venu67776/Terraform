@@ -33,7 +33,7 @@ resource "aws_vpc" "vpc" {
 resource "aws_subnet" "public-subnet-1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = var.vpc-cidr
-  availability_zone       = var.region[1]
+  availability_zone       = aws.var.region[1]
   map_public_ip_on_launch = true
 
   tags      = {
