@@ -10,14 +10,20 @@ variable "vpc-cidr" {
   type          = string
 }
 
-variable "az" {
-  # Assign a number to each AZ letter used in our configuration
-  default = {
-    a = 1
-    b = 2
-    c = 3
-    d = 4
-    e = 5
-    f = 6
-  }
+variable "public-subnet-1-cidr" {
+  default       = "10.0.1.0/24"
+  description   = "Private Subnet 1 CIDR Block"
+  type          = string
+}
+
+variable "public-subnet-2-cidr" {
+  default       = "10.0.2.0/24"
+  description   = "Private Subnet 2 CIDR Block"
+  type          = string
+}
+
+variable "public-subnet-3-cidr" {
+  default       = "10.0.3.0/24"
+  description   = "Private Subnet 3 CIDR Block"
+  type          = string
 }
