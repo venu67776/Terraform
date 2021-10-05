@@ -131,20 +131,6 @@ resource "aws_subnet" "private-subnet-3" {
   }
 }
 
-resource "aws_route_table" "private-route-table-1" {
-  vpc_id       = aws_vpc.vpc.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.gw.id
-  }
-
-  tags       = {
-    Name     = "Public Route Table"
-  }
-}
-
-
 /*terraform aws allocate elastic ip*/
 resource "aws_eip" "eip-for-nat-gateway-1" {
   vpc    = true
