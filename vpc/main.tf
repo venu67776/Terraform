@@ -1,9 +1,9 @@
 terraform {
-  backend "remote" {
-  organization = "venuzs"
-  workspaces {
-     name = "venu"
-   }
+  // backend "remote" {
+  // organization = "venuzs"
+  // workspaces {
+  //    name = "venu"
+  //  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
