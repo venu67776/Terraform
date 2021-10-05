@@ -1,4 +1,9 @@
 terraform {
+  backend "remote" {
+  organization = "venuzs"
+  workspaces {
+     name = "venu"
+   }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -11,5 +16,16 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "us-west-2"
+  region  = var.region
+}
+
+#create a vpc
+resource "aws_vpc" "vpc" {
+  cidr_block              = var.vpc-cidr
+  instance_tenancy        = "default"
+  enable_dns_hostnames    = true
+
+  tags      = {
+    Name    = "vpc1"
+  }
 }
