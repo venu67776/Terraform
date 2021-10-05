@@ -1,10 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket = "venuzs"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
 provider "aws" {
   profile = "default"
   region  = "us-east-1"
@@ -24,7 +17,7 @@ resource "aws_instance" "venu" {
   vpc      = true
 }*/
 
-/*resource "aws_ebs_volume" "venu" {
+resource "aws_ebs_volume" "venu" {
   availability_zone = aws_instance.venu.availability_zone
   size              = 1
 
@@ -36,4 +29,4 @@ resource "aws_volume_attachment" "venuebs" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.venu.id
   instance_id = aws_instance.venu.id
-}*/
+}
