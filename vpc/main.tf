@@ -16,12 +16,12 @@
 
 provider "aws" {
   profile = "default"
-  region  = var.region
+  region  = "${var.region}"
 }
 
 #create a vpc
 resource "aws_vpc" "vpc" {
-  cidr_block              = var.vpc-cidr
+  cidr_block              = "${var.vpc-cidr}"
   instance_tenancy        = "default"
   enable_dns_hostnames    = true
 
