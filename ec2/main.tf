@@ -1,3 +1,23 @@
+ terraform {
+  backend "s3" {
+    bucket = "venu6776"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+    profile = "default"
+    shared_credentials_file = "C:/Users/.aws/credentials"
+  }
+
+   required_providers {
+    aws = {
+       source  = "hashicorp/aws"
+       version = "~> 3.27"
+     }
+   }
+
+   required_version = ">= 0.14.9"
+ }
+
+
 provider "aws" {
   shared_credentials_file = "C:/Users/.aws/credentials"
   profile = "default"
