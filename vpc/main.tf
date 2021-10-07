@@ -19,7 +19,7 @@
 #  terraform {
 #   backend "s3" {
 #     bucket = "venu6766"
-#     key    = "vpc.tfstate"
+#     key    = "terraform.tfstate"
 #     region = "us-east-1"
 #     profile = "default"
 #     shared_credentials_file = "C:/Users/.aws/credentials"
