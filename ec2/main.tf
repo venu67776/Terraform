@@ -38,16 +38,16 @@ resource "aws_instance" "venu" {
   vpc      = true
 }*/
 
-resource "aws_ebs_volume" "venu" {
-  availability_zone = aws_instance.venu.availability_zone
-  size              = 1
+# resource "aws_ebs_volume" "venu" {
+#   availability_zone = aws_instance.venu.availability_zone
+#   size              = 1
 
-  tags = {
-    Name = "venuebs"
-  }
-}
-resource "aws_volume_attachment" "venuebs" {
-  device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.venu.id
-  instance_id = aws_instance.venu.id
-}
+#   tags = {
+#     Name = "venuebs"
+#   }
+# }
+# resource "aws_volume_attachment" "venuebs" {
+#   device_name = "/dev/sdh"
+#   volume_id   = aws_ebs_volume.venu.id
+#   instance_id = aws_instance.venu.id
+# }

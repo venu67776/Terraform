@@ -15,6 +15,9 @@ provider "google" {
   zone    = var.zone
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
+resource "google_storage_bucket" "GCP" {
+  name          = "venu6766"
+  location      = "EU"
+  force_destroy = true
+
 }

@@ -1,24 +1,25 @@
-terraform {
-  backend "remote" {
-    organization = "venuzs"
+# terraform {
+#   backend "remote" {
+#     organization = "venuzs"
 
-    workspaces {
-      name = "venu"
-    }
-  }
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.27"
-    }
-  }
+#     workspaces {
+#       name = "venu"
+#     }
+#   }
+#   required_providers {
+#     aws = {
+#       source  = "hashicorp/aws"
+#       version = "~> 3.27"
+#     }
+#   }
 
-  required_version = ">= 0.14.9"
-}
+#   required_version = ">= 0.14.9"
+# }
 
 provider "aws" {
   profile = "default"
   region  = var.region
+  shared_credentials_file = "C:/Users/.aws/credentials"
 }
 
 /*create vpc*/
@@ -153,7 +154,7 @@ resource "aws_nat_gateway" "nat-gateway-1" {
 
 /*Create Private Route Tables and Add Route Through Nat Gateway */
 
-resource "aws_route_table" "private-route-table-1" {
+resource "aws_route_table" "private-route-table" {
   vpc_id            = aws_vpc.vpc.id
 
   route {
@@ -162,11 +163,19 @@ resource "aws_route_table" "private-route-table-1" {
   }
 
   tags   = {
-    Name = "Private Route Table 1"
+    Name = "Private Route Table"
   }
 }
 
-resource "aws_route_table_association" "private-subnet-1-route-table-association" {
+resource "aws_route_table_association" "private-subnet-1_route-table-association" {
   subnet_id         = aws_subnet.private-subnet-1.id
-  route_table_id    = aws_route_table.private-route-table-1.id
+  route_table_id    = aws_route_table.private-route-table.id
+}
+resource "aws_route_table_association" "private-subnet-2_route-table-association" {
+  subnet_id         = aws_subnet.private-subnet-2.id
+  route_table_id    = aws_route_table.private-route-table.id
+}
+resource "aws_route_table_association" "private-subnet-3_route-table-association" {
+  subnet_id         = aws_subnet.private-subnet-3.id
+  route_table_id    = aws_route_table.private-route-table.id
 }
